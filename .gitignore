@@ -1,5 +1,3 @@
 node_modules/
 dist/
 NetscriptDefinitions.d.ts
-Outbreak/
-!Outbreak/watcher.ts
