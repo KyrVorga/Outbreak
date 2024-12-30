@@ -27,5 +27,13 @@ jobs:
       - name: Compile TypeScript
         run: npx tsc
 
-      - name: Deploy JavaScript
-        run: git push origin main:compiled
+      - name: Copy Compiled Files
+        run: |
+          git config user.name "Rhylei"
+          git config user.email "Rhylei@aureate.dev"
+          git checkout --orphan compiled
+          rm -rf *
+          cp -r dist/* .
+          git add .
+          git commit -m "Update compiled files"
+          git push origin compiled --force
