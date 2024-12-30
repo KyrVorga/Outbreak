@@ -2,7 +2,7 @@
   "include": [
     "NetscriptDefinitions.d.ts",
     "global.d.ts",
-    "Outbreak/**/*", "Outbreak/watcher.ts",
+    "src/**/*", "src/watcher.ts",
   ],
   "compilerOptions": {
     "module": "esnext",
@@ -14,9 +14,9 @@
     "inlineSourceMap": true,
     "sourceRoot": "http://localhost:8000/sources/",
     "strict": true,
-    "rootDir": "Outbreak/",
+    "rootDir": "src/",
     "outDir": "dist/",
-    "baseUrl": "Outbreak/",
+    "baseUrl": "src/",
     "paths": {
       "/*": [
         "*"
