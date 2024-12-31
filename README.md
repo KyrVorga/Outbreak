@@ -1,4 +1,23 @@
-## Extension Recommendations
+# Outbreak
+
+Outbreak is a script used to begin a flood outbreak in Bitburner, it begins by downloading requried util scripts using wget, then it creates a spore and executes it.
+
+## Spore
+
+Spores are what drive the infections of the flood outbreak, a spore is downloaded to a server with admin access, and then it begins to amalgamate that server into the hivemind that is the flood. If a Keymind or Gravemind are present then the spore will defer decision making to it, otherwise, the spore will attempt to grow its resources by performing a hack/grow/weaken cycle untill there are enough resources to spawn a Keymind.
+
+## Keymind
+
+The Keymind is the first evolution of the flood. Once enough resources are amassed by the spores a Keymind is formed, this Keymind is responsible for coordinating all the infected servers to perform batched attacks, purchasing hacknet servers and bitnode progession. Once a certain point is reached the Keymind will become a Gravemind
+
+## Gravemind
+
+Gravemind is the final stage of the flood, and is a superior version of the Keymind, with access to more systems and features.
+
+## Bitburner Template Guide
+
+### Extension Recommendations
+
 [vscode-bitburner-connector](https://github.com/bitburner-official/bitburner-vscode) ([vscode extension marketplace](https://marketplace.visualstudio.com/items?itemName=bitburner.bitburner-vscode-integration)) to upload your files into the game
 
 [vscode-eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) to use live linting in editor
@@ -7,17 +26,20 @@
 
 There is a workspace file in `.vscode` which contains the recommended settings for all of these
 
-## Dependencies
+### Dependencies
+
 [Node.js](https://nodejs.org/en/download/) required for compiling typescript and installing dependencies
 
-## Installation
-```
+### Installation
+
+```bash
 git clone https://github.com/bitburner-official/vscode-template
 npm install
 npm run defs
 ```
 
-## How to use this template
+### How to use this template
+
 Write all your typescript source code in the `/src` directory
 
 To autocompile as you save, run `npm run watch` in a terminal
@@ -28,16 +50,17 @@ Press F1 and Select `Bitburner: Enable File Watcher` to enable auto uploading to
 
 If you run `watcher.js` in game, the game will automatically detect file changes and restart the associated scripts
 
-## Imports
+### Imports
+
 To ensure both the game and typescript have no issues with import paths, your import statements should follow a few formatting rules:
 
- * Paths must be absolute from the root of `src/`, which will be equivalent to the root directory of your home drive
- * Paths must contain no leading slash
- * Paths must end with no file extension
+* Paths must be absolute from the root of `src/`, which will be equivalent to the root directory of your home drive
+* Paths must contain no leading slash
+* Paths must end with no file extension
 
- ### Examples:
+#### Examples
 
-To import `helperFunction` from the file `helpers.ts` located in the directory `src/lib/`: 
+To import `helperFunction` from the file `helpers.ts` located in the directory `src/lib/`:
 
 ```js
 import { helperFunction } from 'lib/helpers'
@@ -55,14 +78,14 @@ To import `someFunction` from the file `main.ts` located in the `src/` directory
 import { someFunction } from 'main'
 ```
 
-## Deugging
+### Deugging
 
 For debugging bitburner on Steam you will need to enable a remote debugging port. This can be done by rightclicking bitburner in your Steam library and selecting properties. There you need to add `--remote-debugging-port=9222` [Thanks @DarkMio]
 
 When debugging you see errors like the following:
 
-```
+```txt
 Could not read source map for file:///path/to/Steam/steamapps/common/Bitburner/resources/app/dist/ext/monaco-editor/min/vs/editor/editor.main.js: ENOENT: no such file or directory, open '/path/to/Steam/steamapps/common/Bitburner/resources/app/dist/ext/monaco-editor/min/vs/editor/editor.main.js.map'
 ```
 
-These errors are to be expected, they are referring to the game's files and the game does not come packaged with sourcemaps.
+These errors are to be expected, they are referring to the game's files and the game does not come packaged with sourcemaps
